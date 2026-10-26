@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environment &amp; Development · NPTEL Practice</title>
+<meta name="description" content="Free practice quizzes for NPTEL Environment &amp; Development (NOC26 HS216), Weeks 0–12: learn all answers, practise one week or all weeks, review your mistakes.">
+<meta name="theme-color" content="#2a0a22">
+<meta property="og:title" content="Environment &amp; Development · NPTEL Practice">
+<meta property="og:description" content="126 practice questions with instant feedback and mistake review.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+<style>
+:root{--pk:#ff5fa8;--glass:rgba(255,255,255,.09);--bd:rgba(255,255,255,.22);--tx:#fff0f7;--mu:#f3b8d4}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tx);background:radial-gradient(ellipse at 20% 10%,#7a1d5e 0,transparent 55%),radial-gradient(ellipse at 85% 80%,#a02a6f 0,transparent 50%),#2a0a22;background-attachment:fixed}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+.wrap{max-width:900px;margin:0 auto;padding:18px 14px 60px}
+h1{font-size:clamp(1.5rem,5vw,2.3rem);margin:8px 0 2px;text-align:center;text-shadow:0 0 22px #ff5fa8}
+.sub{text-align:center;color:var(--mu);margin:0 0 18px}
+.glass{background:var(--glass);border:1px solid var(--bd);border-radius:18px;backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 8px 32px rgba(0,0,0,.3);padding:16px;margin-bottom:14px}
+nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+button,select{font:inherit;color:var(--tx);border:1px solid var(--bd);background:rgba(255,255,255,.1);border-radius:12px;padding:10px 16px;cursor:pointer;transition:.2s}
+select option{color:#222}
+button:hover:not(:disabled),select:hover{background:rgba(255,95,168,.28)}
+nav button.on,.btn{background:linear-gradient(135deg,#ff5fa8,#c23a8e);border-color:transparent;font-weight:600}
+.btn:disabled{opacity:.4;cursor:default}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.row label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--mu)}
+details>summary{cursor:pointer;font-weight:700;font-size:1.1rem;list-style:none}
+details>summary::before{content:"▸ ";color:var(--pk)}details[open]>summary::before{content:"▾ "}
+.q{margin:14px 0 4px;font-weight:600;line-height:1.4}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;line-height:1.35}
+.opt.ok{background:rgba(40,200,100,.38);border-color:#3be082}
+.opt.bad{background:rgba(255,50,70,.4);border-color:#ff5a6a}
+.opt.dim{opacity:.7}
+.bar{height:6px;border-radius:9px;background:rgba(255,255,255,.15);overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff5fa8,#ffd1e8);transition:.3s}
+.tag{font-size:.78rem;color:var(--mu)}
+.big{font-size:2.6rem;font-weight:800;text-align:center;margin:6px 0;text-shadow:0 0 20px #ff5fa8}
+.hid{display:none}
+.rv{border-top:1px solid var(--bd);padding:8px 0;font-size:.92rem}
+:focus-visible{outline:2px solid #ffd1e8;outline-offset:2px}
+@media(max-width:480px){.row>label,.row>label select{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="wrap">
+  <h1>✨ Environment &amp; Development</h1>
+  <p class="sub">NPTEL · NOC26 HS216 · Weeks 0–12</p>
+  <nav id="nav" aria-label="Sections">
+    <button type="button" data-t="learn" class="on" aria-pressed="true">📖 Learn</button>
+    <button type="button" data-t="week" aria-pressed="false">🎯 Practice a Week</button>
+    <button type="button" data-t="all" aria-pressed="false">🌸 Practice All</button>
+  </nav>
+  <section id="learn"></section>
+  <section id="week" class="hid"></section>
+  <section id="all" class="hid"></section>
+</div>
+<noscript><p class="sub">Please enable JavaScript to use this practice site.</p></noscript>
+<script src="data.js"></script>
+<script>
+/* ---------- starry background ---------- */
+(function(){
+  const c=document.getElementById('stars'),x=c.getContext('2d');let W,H,S=[];
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;const n=Math.min(260,Math.floor(W*H/6500));
+    S=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.9+.4,v:Math.random()*.35+.08,p:Math.random()*6.28,k:Math.random()*.03+.01,h:Math.random()<.5}))}
+  function draw(){x.clearRect(0,0,W,H);
+    for(const s of S){s.y-=s.v;s.x+=s.v*.4;s.p+=s.k;if(s.y<-5){s.y=H+5;s.x=Math.random()*W}if(s.x>W+5)s.x=-5;
+      const a=.35+.65*Math.abs(Math.sin(s.p));x.globalAlpha=a;x.fillStyle=s.h?'#ffb3d9':'#fff';
+      x.shadowColor='#ff5fa8';x.shadowBlur=s.r*5;x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill()}
+    x.globalAlpha=1;if(!still)requestAnimationFrame(draw)}
+  const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  addEventListener('resize',()=>{size();if(still)draw()});size();draw();
+})();
+
+/* ---------- helpers ---------- */
+const L='ABCD',$=id=>document.getElementById(id);
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const WEEKS=Object.keys(DATA).map(Number).sort((a,b)=>a-b);
+const wopts=(from,sel)=>WEEKS.filter(w=>w>=from).map(w=>`<option value="${w}"${w==sel?' selected':''}>Week ${w}</option>`).join('');
+
+/* ---------- tabs ---------- */
+function showTab(t){
+  [...$('nav').children].forEach(b=>{const on=b.dataset.t==t;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+  ['learn','week','all'].forEach(id=>$(id).classList.toggle('hid',id!=t));
+  store.set('nptel-tab',t)}
+$('nav').onclick=e=>{const t=e.target.dataset.t;if(t)showTab(t)};
+
+/* ---------- 1. learning ---------- */
+$('learn').innerHTML=WEEKS.map(w=>`<details class="glass"${w==0?' open':''}><summary>Week ${w} <span class="tag">· ${DATA[w].length} questions</span></summary>`+
+  DATA[w].map((q,i)=>`<div class="q">${i+1}. ${esc(q.q)}</div>`+q.o.map((o,j)=>`<div class="opt glass${j==q.a?' ok':''}" style="padding:9px 14px;border-radius:12px;margin:6px 0">${L[j]}. ${esc(o)}${j==q.a?' ✓':''}</div>`).join('')).join('')+`</details>`).join('');
+
+/* ---------- quiz engine (shared) ---------- */
+let keyHandler=null;
+function startQuiz(box,items,title,again){
+  let i=0;
+  if(keyHandler)document.removeEventListener('keydown',keyHandler);
+  keyHandler=e=>{
+    if(!box.offsetParent||e.ctrlKey||e.metaKey||e.altKey||/^(SELECT|INPUT|TEXTAREA)$/.test(e.target.tagName))return;
+    const opts=box.querySelectorAll('.opt'),k=e.key.toLowerCase(),n='1234'.indexOf(k)>=0?'1234'.indexOf(k):'abcd'.indexOf(k);
+    if(k.length==1&&n>=0&&opts[n])opts[n].click();
+    else if(k=='arrowright'&&box.querySelector('#nx'))box.querySelector('#nx').click();
+    else if(k=='arrowleft'&&box.querySelector('#pv')&&!box.querySelector('#pv').disabled)box.querySelector('#pv').click()};
+  document.addEventListener('keydown',keyHandler);
+  const done=()=>items.filter(t=>t.sel!=null).length;
+  function render(){
+    const t=items[i];
+    box.innerHTML=`<div class="glass"><div class="tag">${esc(title)} · Question ${i+1} of ${items.length} · Week ${t.w}</div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${items.length}" aria-valuenow="${done()}"><i style="width:${done()/items.length*100}%"></i></div>
+      <div class="q">${esc(t.q)}</div>`+
+      t.o.map((o,j)=>{let c='';if(t.sel!=null){if(o.c)c='ok';else if(j==t.sel)c='bad';else c='dim'}
+        return `<button type="button" class="opt ${c}" data-j="${j}"${t.sel!=null?' aria-disabled="true"':''}>${L[j]}. ${esc(o.t)}</button>`}).join('')+
+      `<div class="row" style="margin-top:14px;justify-content:space-between">
+        <button type="button" id="pv"${i==0?' disabled':''}>← Prev</button><span class="tag">${done()}/${items.length} answered</span>
+        ${i<items.length-1?'<button type="button" id="nx" class="btn">Next →</button>':''}
+        <button type="button" id="fn" class="btn">Submit ✔</button></div>
+      <div class="tag" style="margin-top:8px">Tip: press 1–4 or A–D to answer, ← → to move.</div></div>`;
+    box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(t.sel!=null)return;t.sel=+b.dataset.j;render()});
+    box.querySelector('#pv').onclick=()=>{i--;render()};
+    const nx=box.querySelector('#nx');if(nx)nx.onclick=()=>{i++;render()};
+    box.querySelector('#fn').onclick=()=>{const left=items.length-done();if(left&&!confirm(left+' unanswered question(s) will count as wrong. Submit anyway?'))return;result()};
+  }
+  function result(){
+    const sc=items.filter(t=>t.o[t.sel]&&t.o[t.sel].c).length,pc=Math.round(sc/items.length*100);
+    const wr=items.filter(t=>!(t.o[t.sel]&&t.o[t.sel].c));
+    document.removeEventListener('keydown',keyHandler);keyHandler=null;
+    const best=store.get('nptel-best')||{},prev=best[title];
+    if(prev==null||pc>prev){best[title]=pc;store.set('nptel-best',best)}
+    const bestTxt=prev==null?'First attempt — nice start!':pc>prev?`New personal best! (previous ${prev}%)`:`Personal best: ${prev}%`;
+    box.innerHTML=`<div class="glass"><div class="tag" style="text-align:center">${esc(title)} · Result</div>
+      <div class="big">${sc} / ${items.length}</div><div class="big" style="font-size:1.3rem">${pc}% ${pc>=80?'🌟 Excellent!':pc>=50?'👍 Good effort':'💪 Keep practicing'}</div>
+      <div class="bar"><i style="width:${pc}%"></i></div>
+      <div class="tag" style="text-align:center">${bestTxt}</div>
+      <div class="row" style="justify-content:center;margin-top:12px"><button type="button" class="btn" id="rt">🔁 Try again</button>${wr.length?'<button type="button" class="btn" id="rm">🎯 Retry mistakes only</button>':''}</div></div>
+      <div class="glass"><b>${wr.length?'Review of mistakes':'Perfect — nothing to review! 🎉'}</b>`+
+      wr.map(t=>`<div class="rv"><div class="tag">Week ${t.w}</div>${esc(t.q)}<br><span style="color:#ff8a96">Your answer: ${t.sel==null?'— not answered —':esc(t.o[t.sel].t)}</span><br><span style="color:#5eea9b">Correct: ${esc(t.o.find(o=>o.c).t)}</span></div>`).join('')+`</div>`;
+    box.querySelector('#rt').onclick=again;
+    const rm=box.querySelector('#rm');if(rm)rm.onclick=()=>startQuiz(box,wr.map(t=>({...t,sel:null})),title+' · mistakes',again);scrollTo({top:0,behavior:'smooth'});
+  }
+  render();scrollTo({top:0,behavior:'smooth'});
+}
+function build(weeks,mixOpts,mixQs,weekWise){
+  let qs=weeks.flatMap(w=>DATA[w].map(q=>({w,q:q.q,o:q.o.map((t,j)=>({t,c:j==q.a})),sel:null})));
+  if(mixOpts)qs.forEach(t=>t.o=shuf(t.o));
+  if(mixQs){if(weekWise){const g={};qs.forEach(t=>(g[t.w]=g[t.w]||[]).push(t));qs=shuf(Object.keys(g).map(Number)).flatMap(w=>shuf(g[w]))}else qs=shuf(qs)}
+  return qs;
+}
+const optsHTML=(id)=>`<label>Option order<select id="${id}o"><option value="0">Same as PDF (A, B, C, D)</option><option value="1">Shuffled options</option></select></label>`;
+
+/* ---------- 2. practice one week ---------- */
+function weekSetup(){
+  $('week').innerHTML=`<div class="glass"><h3 style="margin-top:0">🎯 Practice a Week</h3><div class="row">
+    <label>Select week<select id="wsel">${wopts(1,1)}</select></label>${optsHTML('w')}
+    <label>Question order<select id="wq"><option value="0">Same as PDF</option><option value="1">Shuffled</option></select></label></div>
+    <button type="button" class="btn" id="wgo">Start practice ✨</button></div>`;
+  $('wgo').onclick=()=>{const w=+$('wsel').value,m=$('wo').value=='1',q=$('wq').value=='1';
+    startQuiz($('week'),build([w],m,q,false),'Week '+w,weekSetup)};
+}
+weekSetup();
+
+/* ---------- 3. practice all ---------- */
+function allSetup(){
+  $('all').innerHTML=`<div class="glass"><h3 style="margin-top:0">🌸 Practice All Weeks (0–12)</h3><div class="row">
+    ${optsHTML('a')}
+    <label>Question order<select id="aq"><option value="0">Sequential (Week 0 → 12, as in PDF)</option><option value="1">Mixed week-wise (weeks shuffled, questions shuffled inside)</option><option value="2">Entirely mixed from all weeks</option></select></label>
+    <label>From week<select id="af">${wopts(0,0)}</select></label>
+    <label>To week<select id="at">${WEEKS.map(w=>`<option value="${w}"${w==12?' selected':''}>Week ${w}</option>`).join('')}</select></label></div>
+    <button type="button" class="btn" id="ago">Start practice ✨</button></div>`;
+  $('ago').onclick=()=>{let f=+$('af').value,t=+$('at').value;if(f>t)[f,t]=[t,f];
+    const ws=WEEKS.filter(w=>w>=f&&w<=t),m=$('ao').value=='1',q=$('aq').value;
+    startQuiz($('all'),build(ws,m,q!='0',q=='1'),'All weeks '+f+'–'+t,allSetup)};
+}
+allSetup();
+const lastTab=store.get('nptel-tab');if(['learn','week','all'].includes(lastTab))showTab(lastTab);
+</script>
+</body>
+</html>
